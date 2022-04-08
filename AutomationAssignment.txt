@@ -1,0 +1,61 @@
+Introduction
+The task is broken down into two parts
+· Part 1 – Automation
+· Part 2 – Functional Manual Testing
+
+Part 1 Automation
+-----------------
+
+Using the public API below we will like you to demonstrate your ability to write test automation code in a language of your choice. The scenarios to automate are described in the API section below.
+
+Instructions
+1. Ideally, store your code on a public hosting repository like GitHub. You may also send it to us in a format that is easy to build.
+2. As stated above, use a language you are comfortable with. The team uses Java, but your choice will not disadvantage you.
+3. We will like you to write your tests in Gherkin format, ideally using Cucumber. You can use Cucumber with other frameworks e.g., junit, restAssured etc.
+4. The submitted code project should have the following:
+        a. Feature files
+        b. Step definitions
+        c. A runner file
+        d. Any other supporting code
+5. Please document your assumptions or any external dependencies for running the tests.
+6. You may break down the scenarios into as many feature files as you see fit.
+7. Return the test to our HR representative 5 working days after you receive it 8. You may ask for clarification at any time by emailing dapo.awoola@bbc.co.uk
+
+
+The API
+-------
+https://testapi.io/api/ottplatform/media
+The above endpoint shows a list of music tracks and metadata. There are 14 such tracks present in the response.
+Each music track contains various data elements like type, id, title_list etc.
+
+Automate the following test scenarios for the given endpoint
+
+Scenario 1:
+1. Make a GET request to https://testapi.io/api/ottplatform/media
+2. Verify that the HTTP status code of the response is 200
+3. Verify that the response time of the request is below 1000 milliseconds
+
+Scenario 2:
+1. Make a GET request to https://testapi.io/api/ottplatform/media
+2. Verify if the “id” field is never null or empty(“”) for all 14 items present in the data array
+3. Verify that the “segment_type” field for every track is always “music”
+
+Scenario 3:
+1. Make a GET request to https://testapi.io/api/ottplatform/media
+2. Verify that the “primary” field in “title_list” is never null or empty(“”) for any track
+
+Scenario 4:
+1. Make a GET request to https://testapi.io/api/ottplatform/media
+2. Verify that only one track in the list has “now_playing” field in “offset” as true
+
+Scenario 5:
+1. Make a GET request to https://testapi.io/api/ottplatform/media
+2. In the response headers, verify the “Date” value
+
+
+Part 2 – Functional Manual Testing
+----------------------------------
+
+Please write three test cases (non-automated) for the endpoint above using Gherkin.
+Take a good look at the data in the API and come up with three test cases.
+You can write them in Gherkin format if you wish.

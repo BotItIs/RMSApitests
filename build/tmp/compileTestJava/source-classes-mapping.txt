@@ -1,2 +1,2 @@
-cucumber/stepdefs/RMSApi.java
- cucumber.stepdefs.RMSApi
+cucumber/stepdefs/RMSApiTestSteps.java
+ cucumber.stepdefs.RMSApiTestSteps

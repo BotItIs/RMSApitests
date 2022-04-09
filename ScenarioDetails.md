@@ -49,18 +49,18 @@ Take a good look at the data in the API and come up with three test cases.
 You can write them in Gherkin format if you wish.
 
 [Note: Scenarios are as follows ]
-Scenario: Each track length should be more than zero seconds
-  Given I make a GET request to RMS Api
-  When I recieve a api response
-  Then "offset" end should be more than "offset" start
+### Scenario: Each track length should be more than zero seconds
+     Given I make a GET request to RMS Api
+     When I recieve a api response
+     Then "offset" end should be more than "offset" start
 
-Scenario: Music track uris should match the label
-  Given I make a GET request to RMS Api
-  When I recieve a api response
-  Then uris should include spotify urls when label is "Spotify"
-  Then uris should include apple music urls when label is "Apple Music",
+### Scenario: Music track uris should match the label
+      Given I make a GET request to RMS Api
+      When I recieve a api response
+      Then uris should include spotify urls when label is "Spotify"
+      Then uris should include apple music urls when label is "Apple Music",
 
-Scenario: Type should be music track
-  Given I make a GET request to RMS Api  
-  When I recieve a api response
-  Then all data type should be "music_track"
+### Scenario: Type should be music track
+      Given I make a GET request to RMS Api  
+      When I recieve a api response
+      Then all data type should be "music_track"

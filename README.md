@@ -10,7 +10,7 @@
   - This project has .feature file in test/resources/features folder which contains the test feature and scenarios in gherkin format and corresponding step definitions can be found from test/java/cucumber/stepdefs. 
   - TestRunner.java have additional cucumber properties 
 
-  ### Test execution and Reporing
+  ### Test execution and Reporting
   - Build the project first with `gradle build`
   - To run the tests run command `gradle cucumber`
   - To view reports check target/reports folder

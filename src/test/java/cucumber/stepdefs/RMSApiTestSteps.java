@@ -1,8 +1,8 @@
 package cucumber.stepdefs;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -22,7 +22,7 @@ public class RMSApiTestSteps {
     JsonPath jsonResponse;
     String rmsApi = "https://testapi.io/api/TruptiRath/api/ottplatform/media";
 
-    @Given("^I make a GET request to RMSApi$")
+    @When("^I make a GET request to RMSApi$")
     public void getRequest() throws Throwable {
         response = given().get(rmsApi);
         jsonResponse = response.jsonPath();

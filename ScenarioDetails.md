@@ -51,12 +51,12 @@ You can write them in Gherkin format if you wish.
 [Note: Scenarios are as follows ]
 ### Scenario: Each track length should be more than zero seconds
      Given I make a GET request to RMS Api
-     When I recieve a api response
+     When I recieve an API response
      Then "offset" end should be more than "offset" start
 
 ### Scenario: Music track uris should match the label
       Given I make a GET request to RMS Api
-      When I recieve a api response
+      When I recieve an API response
       Then uris should include spotify urls when label is "Spotify"
       Then uris should include apple music urls when label is "Apple Music",
 

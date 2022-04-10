@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import utils.DateUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -85,8 +86,11 @@ public class RMSApiTestSteps {
 
     @Then("^response headers should contain \"Date\" header$")
     public void verifyDateHeader() throws Throwable {
+        DateUtil dateUtil = new DateUtil();
+        String currentDate = dateUtil.getCurrentDate("EEE, dd MMM yyyy");
         String dateString = response.header("Date");
-        assertTrue("Date header should be part of response header", dateString != null && !dateString.equals(""));  
+        assertTrue("Date header should be part of response header", dateString != null && !dateString.equals(""));
+        assertTrue("Date header should have current date", dateString.contains(currentDate));  
     }
 }
  

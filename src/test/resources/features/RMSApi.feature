@@ -17,7 +17,6 @@ Feature: RMS Api
     Given I make a GET request to RMSApi
     Then  "primary" field in "title_list" is never null or empty("") for any track
 
-
   Scenario: now_playing should be true for one track at a single point of time
     Given I make a GET request to RMSApi
     Then only one track in the list has "now_playing" field in "offset" as true

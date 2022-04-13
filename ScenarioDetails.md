@@ -37,7 +37,6 @@ Scenario 5:
 2. In the response headers, verify the “Date” value
 
 [Note
-- Because of some accessibility issue, had to create another end point with same content. Hence tests use "https://testapi.io/api/TruptiRath/api/ottplatform/media" instead
 - APi response time is always more than 1000 miliseconds. Hence the first scenario fails]
 
 

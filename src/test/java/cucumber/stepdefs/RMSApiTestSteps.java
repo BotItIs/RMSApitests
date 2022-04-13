@@ -6,7 +6,6 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utils.DateUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class RMSApiTestSteps {
     String url;
     Response response;
     JsonPath jsonResponse;
-    String rmsApi = "https://testapi.io/api/TruptiRath/api/ottplatform/media";
+    String rmsApi = "https://testapi.io/api/ottplatform/media";
 
     @When("^I make a GET request to RMSApi$")
     public void getRequest() throws Throwable {
@@ -84,13 +83,10 @@ public class RMSApiTestSteps {
         assertTrue("There should be one track playing now", playing.size()==1);
     }
 
-    @Then("^response headers should contain \"Date\" header$")
+    @Then("^the response header \"Date\" has a specific date$")
     public void verifyDateHeader() throws Throwable {
-        DateUtil dateUtil = new DateUtil();
-        String currentDate = dateUtil.getCurrentDate("EEE, dd MMM yyyy");
-        String dateString = response.header("Date");
-        assertTrue("Date header should be part of response header", dateString != null && !dateString.equals(""));
-        assertTrue("Date header should have current date", dateString.contains(currentDate));  
+        String dateHeader = response.header("Date");
+        assertTrue("Date should be Fri, 21 May", dateHeader.equals("Fri, 21 May"));
     }
 }
  
